@@ -11,7 +11,7 @@ public interface IMemory
 	public void WriteWord(Word val, Word address) mut;
 
 
-	public Byte[] data{ get; };
+	public Byte[0x10000] data{ get; };
 
 	public Byte this[Word i]{get; set;};
 }

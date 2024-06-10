@@ -19,6 +19,8 @@ public class RAM: IMemory
 			this._data[i] = 0xEA;
 	}
 
+	public Byte[65536] data{get => _data;}
+
 	public Byte GetByte(Word i)
 	{
 		return this._data[i];

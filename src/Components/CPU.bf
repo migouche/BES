@@ -1203,7 +1203,7 @@ class CPU
 		if(verbose)
 			Console.WriteLine($"starting at PC = {this.PC}");
 		//this.PC = resetVector; // may wanna call reset or something
-		while(this.PC < 0xFFFF && !exit) // be better than that and add break
+		while(/*this.PC < 0xFFFF && !exit*/ true) // be better than that and add break
 		{
 			this.Tick();
 		}
@@ -1238,8 +1238,6 @@ class CPU
 			this.totalCycles++;
 		if(this.totalCycles % 65536 == 0) 
 			Console.WriteLine($"total Cycles at {this.totalCycles}");
-		if(this.totalCycles > 100000000)
-			Console.WriteLine("cycles out of bounds?");
 		if(this.totalCycles > 56736000 - 100)
 		{
 			//Console.WriteLine("nearing error, saving cpu and mem status");
